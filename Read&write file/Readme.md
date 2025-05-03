@@ -72,9 +72,9 @@ Routing = aap alag alag urls bana skte ho aur unpar kya hoga ye bhi tay kr skte 
 
 
 //MiddleWare
-any function who pass the param of req res next is Known as middleware
+any function who pass the param of req res next is Known as middleware and it work only when you use "use" 
 like 
-app.getfunction(req, res, next){
+app.use(req, res, next){
     res.send("this is request")
     next()
 }
