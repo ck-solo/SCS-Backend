@@ -9,3 +9,15 @@ app.use(req, res, next){
     res.send("this is request")
     next()
 }
+
+++++++++++++++Expess Section Middlewar+++++++++++
+
+Cookie => use to save data on browser
+session => use to save data on server the main cause of session is that whenver the server got restart all data will removed
+ 
+the syntax 
+app.use(session({
+    secret: 'random stuff',
+    resave: false, [In your session if there is no change then it don't store any value ]
+    saveUninitialized: false [if any user come and he doesn't do anything]
+}));
