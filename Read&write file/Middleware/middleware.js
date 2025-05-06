@@ -20,28 +20,55 @@
 
 // Express section 
 
+// const express = require('express');
+// const app = express();
+// const session = require('express-session')
+
+// app.use(session({
+//     secret: 'random stuff',
+//     resave: false,
+//     saveUninitialized: false
+// }));
+
+
+// app.get('/',function(req, res, next){
+//     res.send('hey')
+// })
+
+// app.get('/create',function(req, res, next){
+//     req.session.polo = true;
+//     res.send("i am create");
+// })
+
+// app.get('/checks',function(req, res, next){
+//    console.log(req.session.polo);
+// })
+
+// app.listen(3000);
+
+
+// Connect Flash
 const express = require('express');
 const app = express();
-const session = require('express-session')
+const expressSession  = require("express-session")
+const flash = require("connect-flash")
 
-app.use(session({
-    secret: 'random stuff',
-    resave: false,
-    saveUninitialized: false
-}));
+app.use(expressSession({
+    resave:false,
+    saveUninitialized:false,
+    secret:"anything"
+}))
 
+app.use(flash());
 
-app.get('/',function(req, res, next){
-    res.send('hey')
+app.get("/",function(req,res,next){
+    req.flash("error","Invalid Credentails")
+    res.redirect("/error")
 })
 
-app.get('/create',function(req, res, next){
-    req.session.polo = true;
-    res.send("done");
-})
-
-app.get('/check',function(req, res, next){
-   console.log(req.session.polo);
+app.get("/error",function(req,res,next){
+    let message = req.flash("error")
+    res.send("message");
 })
 
 app.listen(3000);

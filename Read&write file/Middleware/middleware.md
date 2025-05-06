@@ -21,3 +21,6 @@ app.use(session({
     resave: false, [In your session if there is no change then it don't store any value ]
     saveUninitialized: false [if any user come and he doesn't do anything]
 }));
+
+++++++++++++++Connect Flash++++++++++++++
+Whenever we want to redirect user from one route to another route like if there is a route of login and password and user input wrong input then you want to throw an error like your credential were not correct and you redirect the user to login route
