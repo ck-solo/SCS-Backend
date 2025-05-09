@@ -1,0 +1,1 @@
+browser me ek security feature hota hai jiski wajah se aap kisi aur domain ka data nhi manga skte ya show nai kr skte hai aur browser apko rokta hai ab agar aap chahte hai ki browser allow kre data to laane ke liye to fir aapko us website ke server ke through CORS enable krna padega
